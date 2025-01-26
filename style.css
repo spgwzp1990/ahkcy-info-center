@@ -1,0 +1,197 @@
+/* 基础样式 */
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 标题样式 */
+h1, h2, h3 {
+    color: #003366;
+    margin: 20px 0 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #003366;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #ff6600;
+}
+
+/* 段落样式 */
+p {
+    margin: 10px 0;
+    text-indent: 2em;
+    line-height: 1.8;
+}
+
+/* 列表样式 */
+ul {
+    padding-left: 40px;
+    margin: 15px 0;
+}
+
+li {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* 业务板块样式 */
+.business-item {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 联系方式样式 */
+#contact {
+    background-color: #003366;
+    color: #fff;
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 8px;
+}
+
+#contact a {
+    color: #ff6600;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* 导航菜单样式 */
+nav {
+    background-color: #003366;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* 返回顶部按钮 */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+#back-to-top:hover {
+    background-color: #ff6600;
+}
+
+/* 加载动画样式 */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.9);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #003366;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .business-item {
+        padding: 15px;
+    }
+    
+    #contact {
+        padding: 20px;
+    }
+}
