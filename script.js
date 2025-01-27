@@ -1,71 +1,64 @@
-// 返回顶部功能
-const backToTopButton = document.getElementById('back-to-top');
+// 轮播图功能
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const totalSlides = slides.length;
 
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        slide.style.opacity = i === index ? 1 : 0;
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+}
+
+// 自动播放
+let slideInterval = setInterval(nextSlide, 5000);
+
+// 暂停自动播放当用户交互时
+const carousel = document.querySelector('.carousel');
+carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+carousel.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(nextSlide, 5000);
+});
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// 导航栏滚动监听
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
     } else {
-        backToTopButton.style.display = 'none';
+        navbar.classList.remove('scrolled');
     }
 });
 
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+// 响应式菜单切换
+const menuToggle = document.createElement('div');
+menuToggle.classList.add('menu-toggle');
+menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+document.querySelector('.navbar .container').appendChild(menuToggle);
+
+menuToggle.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
 });
 
-// 平滑滚动效果
-document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// 页面加载控制
-const loading = document.getElementById('loading');
-const body = document.body;
-
-// 初始隐藏页面内容
-body.style.opacity = '0';
-
-// 页面加载完成处理
-window.addEventListener('load', () => {
-    // 隐藏加载动画
-    loading.style.opacity = '0';
-    setTimeout(() => {
-        loading.style.display = 'none';
-    }, 500);
-
-    // 显示页面内容
-    body.style.transition = 'opacity 0.5s ease';
-    body.style.opacity = '1';
-});
-
-// 页面加载优化
-document.addEventListener('DOMContentLoaded', () => {
-    // 延迟加载图片
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-});
+// 初始化显示第一张轮播图
+showSlide(currentSlide);

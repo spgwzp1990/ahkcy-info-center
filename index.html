@@ -23,85 +23,134 @@
     <meta name="twitter:description" content="安徽省勘查技术院信息技术中心官方网站，提供地质勘查、生态修复、地质数据和地理信息服务">
     <meta name="twitter:image" content="images/twitter-image.png">
     
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">信息技术中心</a>
+            <ul class="nav-links">
                 <li><a href="#responsibilities">主要职责</a></li>
                 <li><a href="#business">业务范畴</a></li>
                 <li><a href="#departments">内设机构</a></li>
-                <li><a href="#contact">联系方式</a></li>
+                <li><a href="#contact">联系我们</a></li>
             </ul>
-        </nav>
-        <h1>安徽省勘查技术院 信息技术中心</h1>
-        <h2>（安徽省地质矿产勘查局清洁能源重点实验室碳储碳汇研究室）</h2>
-    </header>
+        </div>
+    </nav>
 
-    <section id="responsibilities">
-        <h2>主要职责</h2>
-        <p>承担院水工环地质、地质大数据和地理空间信息研究工作。</p>
+    <!-- 轮播图 -->
+    <section class="carousel">
+        <div class="carousel-item active">
+            <img src="images/slide1.jpg" alt="轮播图1">
+            <div class="carousel-caption">
+                <h3>地质勘查与生态修复</h3>
+                <p>专业的地质勘查与生态修复服务</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images/slide2.jpg" alt="轮播图2">
+            <div class="carousel-caption">
+                <h3>地质数据与地理信息</h3>
+                <p>先进的地质数据管理与地理信息系统</p>
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
     </section>
 
-    <section id="business">
-        <h2>业务范畴</h2>
-        <div class="business-item">
-            <h3>1. 地质勘查</h3>
-            <ul>
-                <li>地热、矿泉水等低碳清洁资源调查评价与开发利用咨询</li>
-                <li>地质灾害评估和治理工程勘查设计</li>
-                <li>地质遗迹资源调查与地质文化村（镇）申报、建设、运营</li>
-            </ul>
-        </div>
-        <div class="business-item">
-            <h3>2. 生态修复</h3>
-            <ul>
-                <li>矿山地质环境与采矿损毁土地调查、监测、评估</li>
-                <li>矿山生态修复、山水工程、全域土地综合整治等方案的编制与咨询</li>
-                <li>碳核算、利用与地质封存技术研究</li>
-            </ul>
-        </div>
-        <div class="business-item">
-            <h3>3. 地质数据</h3>
-            <ul>
-                <li>基础地质与地球物理资料的数字化、数据库建设</li>
-                <li>数值模拟与数字化产品开发</li>
-            </ul>
-        </div>
-        <div class="business-item">
-            <h3>4. 地理信息</h3>
-            <ul>
-                <li>地下空间探测与实景三维构建</li>
-                <li>基础测绘与遥感</li>
-                <li>信息平台建设与运营</li>
-            </ul>
+    <!-- 主要职责 -->
+    <section id="responsibilities" class="section">
+        <div class="container">
+            <h2>主要职责</h2>
+            <p>承担院水工环地质、地质大数据和地理空间信息研究工作。</p>
         </div>
     </section>
 
-    <section id="departments">
-        <h2>内设机构</h2>
-        <ul>
-            <li>水工环地质研究室</li>
-            <li>地质大数据研究室</li>
-            <li>地理空间信息研究室</li>
-        </ul>
+    <!-- 业务范畴 -->
+    <section id="business" class="section">
+        <div class="container">
+            <h2>业务范畴</h2>
+            <div class="business-grid">
+                <div class="business-item">
+                    <i class="fas fa-mountain"></i>
+                    <h3>地质勘查</h3>
+                    <ul>
+                        <li>地热、矿泉水等低碳清洁资源调查评价与开发利用咨询</li>
+                        <li>地质灾害评估和治理工程勘查设计</li>
+                        <li>地质遗迹资源调查与地质文化村（镇）申报、建设、运营</li>
+                    </ul>
+                </div>
+                <div class="business-item">
+                    <i class="fas fa-tree"></i>
+                    <h3>生态修复</h3>
+                    <ul>
+                        <li>矿山地质环境与采矿损毁土地调查、监测、评估</li>
+                        <li>矿山生态修复、山水工程、全域土地综合整治等方案的编制与咨询</li>
+                        <li>碳核算、利用与地质封存技术研究</li>
+                    </ul>
+                </div>
+                <div class="business-item">
+                    <i class="fas fa-database"></i>
+                    <h3>地质数据</h3>
+                    <ul>
+                        <li>基础地质与地球物理资料的数字化、数据库建设</li>
+                        <li>数值模拟与数字化产品开发</li>
+                    </ul>
+                </div>
+                <div class="business-item">
+                    <i class="fas fa-map"></i>
+                    <h3>地理信息</h3>
+                    <ul>
+                        <li>地下空间探测与实景三维构建</li>
+                        <li>基础测绘与遥感</li>
+                        <li>信息平台建设与运营</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- 加载动画 -->
-    <div id="loading">
-        <div class="spinner"></div>
-    </div>
+    <!-- 内设机构 -->
+    <section id="departments" class="section">
+        <div class="container">
+            <h2>内设机构</h2>
+            <div class="department-grid">
+                <div class="department-item">
+                    <i class="fas fa-water"></i>
+                    <h3>水工环地质研究室</h3>
+                </div>
+                <div class="department-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>地质大数据研究室</h3>
+                </div>
+                <div class="department-item">
+                    <i class="fas fa-globe"></i>
+                    <h3>地理空间信息研究室</h3>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <button id="back-to-top" title="返回顶部">↑</button>
-
-    <footer id="contact">
-        <h2>联系方式</h2>
-        <p>联系人：何主任</p>
-        <p>联系电话：<a href="tel:17855127789">17855127789</a></p>
-        <p>单位地址：合肥市阜阳北路700号</p>
-        <p>工作时间：8:00-12:00，14:30-17:30</p>
+    <!-- 联系方式 -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-user"></i> 联系人：何主任</p>
+                <p><i class="fas fa-phone"></i> 联系电话：<a href="tel:17855127789">17855127789</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> 单位地址：合肥市阜阳北路700号</p>
+                <p><i class="fas fa-clock"></i> 工作时间：8:00-12:00，14:30-17:30</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 安徽省勘查技术院 信息技术中心. 保留所有权利。</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
