@@ -1,0 +1,31 @@
+:root {
+  --color-brand-primary: #0c1f3a;
+  --color-brand-surface: #142b4e;
+  --color-brand-accent: #33c4ff;
+  --color-status-danger: #ff5a5a;
+  --color-status-success: #27ae60;
+  --color-background: #f4f7fb;
+  --color-foreground: #0c1f3a;
+  --color-muted: #6b7a90;
+  --color-border: rgba(12, 31, 58, 0.18);
+  --shadow-elevated: 0 8px 24px rgba(0, 0, 0, 0.14);
+  --radius-xl: 12px;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  color-scheme: light;
+}
+
+.dark {
+  --color-background: #070d18;
+  --color-foreground: #f5f7fa;
+  --color-muted: #94a4c1;
+  --color-border: rgba(51, 196, 255, 0.3);
+  color-scheme: dark;
+}
+
+:root {
+  font-feature-settings: "tnum";
+}
